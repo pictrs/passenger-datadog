@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('daemons', '~> 1.0')
   s.add_runtime_dependency('dogstatsd-ruby', '>= 2.0.0', '< 4.0.0')
   s.add_runtime_dependency('nokogiri', '~> 1.0')
-  s.add_runtime_dependency('passenger', '>= 4.0.0', '<= 6.0.0')
 
   s.add_development_dependency('rake', '~> 12.0')
   s.add_development_dependency('rspec', '~> 3.3')

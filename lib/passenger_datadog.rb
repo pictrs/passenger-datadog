@@ -14,7 +14,7 @@ class PassengerDatadog
     return if status.empty?
 
     # Good job Passenger 4.0.10. Return non xml in your xml output.
-    status = status.split("\n")[3..-1].join("\n") unless status.start_with?('<?xml')
+    status = status[status.index('<?xml ')..]
 
     statsd = Datadog::Statsd.new
     parsed = Nokogiri::XML(status)
