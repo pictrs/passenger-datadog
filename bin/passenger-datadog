@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(File.dirname(File.expand_path(__FILE__)) + '/../lib')
 require 'daemons'
 require 'passenger_datadog'
 
-Daemons.run_proc('passenger-datadog', dir_mode: :system) do
+Daemons.run_proc('passenger-datadog', dir_mode: :script, dir: 'tmp/pids/') do
   loop do
     PassengerDatadog.new.run
     sleep(30)

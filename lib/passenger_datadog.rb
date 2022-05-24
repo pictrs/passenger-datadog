@@ -12,6 +12,7 @@ class PassengerDatadog
   def run
     status = `passenger-status --show=xml`
     return if status.empty?
+    return unless status.include?('<?xml ')
 
     # Good job Passenger 4.0.10. Return non xml in your xml output.
     status = status[status.index('<?xml ')..]
